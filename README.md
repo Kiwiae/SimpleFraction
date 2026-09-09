@@ -56,6 +56,7 @@ Vérifiez avec le navigateur;
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
     > Répondre ici
+    > Ce fichier utilise la syntaxe Markdown.
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
     # Répondre ici
