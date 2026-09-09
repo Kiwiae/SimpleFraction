@@ -89,7 +89,7 @@ Quelle syntaxe est utilisée pour ce fichier ?
     .settings/
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
-    > Expliquez la procédure de façon synthétique
+    > J’ai généré une paire de clés SSH Ed25519 avec la commande `ssh-keygen -t ed25519 -f ~/.ssh/cplprog`. J’ai ajouté la clé publique `cplprog.pub` dans les paramètres SSH de GitHub et conservé la clé privée sur mon ordinateur. Après vérification de l’empreinte du serveur, j’ai testé la connexion avec `ssh -T -i ~/.ssh/cplprog -o IdentitiesOnly=yes git@github.com` : l’authentification a réussi. Enfin, j’ai configuré Git pour utiliser cette clé et remplacé l’URL HTTPS du dépôt distant par son URL SSH.
 
 ## Partie II (à faire durant le TD) : compléter la classe `Fraction`
 Dans cet partie, vous compléterez les classes `Fraction` et `Main`.
