@@ -14,32 +14,27 @@ Dans cet exercice, vous créerez une classe `Fraction` représentant un nombre r
 
 1. Sur la forge, créez le dépôt (_repository_) `SimpleFraction`;
 En terme de *commits*, quelle différence constatez-vous entre cocher une (ou plusieurs) des cases *Initialize this repository with* et n'en cocher aucune ?
-    > Répondre ici
     > Si l’on coche une ou plusieurs options « Initialize this repository with », la forge crée les fichiers sélectionnés et un commit initial. Si l’on ne coche aucune option, le dépôt est vide et ne contient aucun commit.
     *Pour la suite, ne cochez aucune de ces cases*.
 1. Localement, configurez `git` avec votre nom (`user.name`) et votre email (`user.email`) (cf. [Personnalisation de Git](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git));
     ```bash
-    # Répondre ici
     git config user.name "YANG Kaiwei"
     git config user.email "kaiwei.yang@ens.uvsq.fr"
     ```
 1. Initialisez le dépôt `git` local pour le projet (cf. [Démarrer un dépôt Git](https://git-scm.com/book/fr/v2/Les-bases-de-Git-D%C3%A9marrer-un-d%C3%A9p%C3%B4t-Git));
     ```bash
-    # Répondre ici
     git init -b main
     ```
 1. Dans votre IDE, créez la classe `Fraction` (vide pour le moment) et la classe `Main` (avec un simple affichage) dans le projet (cf. [Méthode `main`](https://docs.oracle.com/javase/specs/jls/se19/html/jls-12.html#jls-12.1.4));
 Vérifiez que le projet compile et s'exécute dans l'IDE;
 Validez les changements (cf. [Enregistrer des modifications dans le dépôt](https://git-scm.com/book/fr/v2/Les-bases-de-Git-Enregistrer-des-modifications-dans-le-d%C3%A9p%C3%B4t));
     ```bash
-    # Commandes pour valider les changements
     git add Fraction.java Main.java README.md
     git commit -m "Ajout des classes Fraction et Main"
     ```
 1. Ajoutez la méthode `toString` à la classe `Fraction` (cf. [`Object.toString`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#toString())) qui retournera la chaîne `"Je suis une fraction."` et modifiez la classe `Main` en conséquence;
 Validez les changements;
     ```Java
-    // Code pour tester toString
     Fraction fraction = new Fraction();
     assert "Je suis une fraction.".equals(fraction.toString())
             : "Résultat incorrect pour toString";
@@ -48,31 +43,50 @@ Validez les changements;
 Vous utiliserez le protocole `https` pour cela;
 Vérifiez avec le navigateur;
     ```bash
-    # Commandes pour publier les modifications
     git remote add origin https://github.com/Kiwiae/SimpleFraction.git
     git remote -v
     git push origin main
     ```
 1. Sur la forge, ajoutez un fichier de documentation `README.md`.
 Quelle syntaxe est utilisée pour ce fichier ?
-    > Répondre ici
     > Ce fichier utilise la syntaxe Markdown.
 1. Récupérez localement les modifications effectuées sur la forge.
     ```bash
-    # Répondre ici
     git pull origin main
     ```
 1. Ajoutez les répertoires et fichiers issus de la compilation aux fichiers ignorés par `git` (cf. [`.gitignore` pour Java](https://github.com/github/gitignore/blob/main/Java.gitignore));
     ```bash
     # Copier ici le contenu de `.gitignore`
+    .DS_Store
+
+    *.class
+    bin/
+    out/
+    target/
+
+    .vscode/
+    .idea/
+    *.iml
+    .classpath
+    .project
+    .settings/
     ```
 1. Retirez les fichiers de configuration de l'IDE du projet;
     ```bash
-    # Répondre ici
+    git ls-files
+    # Aucun fichier de configuration de l'IDE n'est suivi par Git.
+    # Il n'y a donc aucun fichier à retirer de l'index.
     ```
     Ajoutez-les aux fichiers ignorés par `git`.
     ```bash
     # Copier ici les modifications de `.gitignore`
+    # Règles déjà présentes dans .gitignore :
+    .vscode/
+    .idea/
+    *.iml
+    .classpath
+    .project
+    .settings/
     ```
 1. Configurez l'accès par clé publique/clé privée à la forge (cf. [Connecting to GitHub with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)).
     > Expliquez la procédure de façon synthétique
