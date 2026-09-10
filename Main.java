@@ -27,6 +27,22 @@ public class Main {
         assert Math.abs(new Fraction(-1, 2).doubleValue() + 0.5) < 1E-8;
         assert new Fraction().doubleValue() == 0.0;
 
+
+        Fraction left = new Fraction(1, 2);
+        Fraction right = new Fraction(1, 3);
+        Fraction sum = left.add(right);
+
+        assert sum.getNumerator() == 5;
+        assert sum.getDenominator() == 6;
+
+        // Vérifier que les fractions initiales ne sont pas modifiées.
+        assert "1/2".equals(left.toString());
+        assert "1/3".equals(right.toString());
+
+        assert "3/4".equals(new Fraction(3, 4).add(Fraction.ZERO).toString());
+        assert new Fraction(1, 2).add(new Fraction(-1, 2))
+         .getNumerator() == 0;
+         
         System.out.println("Tous les tests ont réussi.");
     }
 }
