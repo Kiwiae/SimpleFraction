@@ -15,6 +15,13 @@ public class Main {
 
         assert "0/1".equals(Fraction.ZERO.toString());
         assert "1/1".equals(Fraction.UN.toString());
+
+        Fraction fractionToTest = new Fraction(3, 4);
+        assert fractionToTest.getNumerator() == 3;
+        assert fractionToTest.getDenominator() == 4;
+
+        assert new Fraction().getNumerator() == 0;
+        assert new Fraction().getDenominator() == 1;
         
         System.out.println("Tests des constructeurs réussis.");
     }
