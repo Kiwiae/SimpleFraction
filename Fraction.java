@@ -1,6 +1,9 @@
 public class Fraction {
     private int numerator;
     private int denominator;
+
+    public static final Fraction ZERO = new Fraction(0, 1);
+    public static final Fraction UN = new Fraction(1, 1);
     
     public Fraction(int numerator,int denominator){
         if(denominator==0){

@@ -13,6 +13,9 @@ public class Main {
         assert zeroDenominatorRejected
                 : "Un dénominateur nul doit être refusé.";
 
+        assert "0/1".equals(Fraction.ZERO.toString());
+        assert "1/1".equals(Fraction.UN.toString());
+        
         System.out.println("Tests des constructeurs réussis.");
     }
 }
