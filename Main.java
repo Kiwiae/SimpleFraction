@@ -42,7 +42,28 @@ public class Main {
         assert "3/4".equals(new Fraction(3, 4).add(Fraction.ZERO).toString());
         assert new Fraction(1, 2).add(new Fraction(-1, 2))
          .getNumerator() == 0;
+
+        Fraction half = new Fraction(1, 2);
+        Fraction equivalentHalf = new Fraction(2, 4);
+
+        assert half.equals(half);
+        assert half.equals(equivalentHalf);
+        assert equivalentHalf.equals(half);
+
+        assert new Fraction(-1, 2).equals(new Fraction(1, -2));
+        assert new Fraction(-1, -2).equals(half);
+        assert new Fraction(0, 5).equals(Fraction.ZERO);
+
+        assert !half.equals(new Fraction(1, 3));
+        assert !half.equals(null);
+        assert !half.equals("1/2");
+
+        assert half.hashCode() == equivalentHalf.hashCode();
+        assert new Fraction(-1, 2).hashCode()
+               == new Fraction(1, -2).hashCode();
+        assert new Fraction(0, 5).hashCode() == Fraction.ZERO.hashCode();
          
+
         System.out.println("Tous les tests ont réussi.");
     }
 }

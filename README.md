@@ -154,7 +154,25 @@ Vous respecterez les consignes ci-dessous :
     ```
 1. Ajoutez le test d'égalité entre fractions (deux fractions sont égales si elles représentent la même fraction réduite) (cf. [`java.lang.Object.equals`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object))),
    ```Java
-    // Assertions pour tester l'égalité
+    Fraction half = new Fraction(1, 2);
+    Fraction equivalentHalf = new Fraction(2, 4);
+
+    assert half.equals(half);
+    assert half.equals(equivalentHalf);
+    assert equivalentHalf.equals(half);
+
+    assert new Fraction(-1, 2).equals(new Fraction(1, -2));
+    assert new Fraction(-1, -2).equals(half);
+    assert new Fraction(0, 5).equals(Fraction.ZERO);
+
+    assert !half.equals(new Fraction(1, 3));
+    assert !half.equals(null);
+    assert !half.equals("1/2");
+
+    assert half.hashCode() == equivalentHalf.hashCode();
+    assert new Fraction(-1, 2).hashCode()
+        == new Fraction(1, -2).hashCode();
+    assert new Fraction(0, 5).hashCode() == Fraction.ZERO.hashCode();
     ```
 1. Ajoutez la comparaison de fractions selon l'ordre naturel (cf. [`java.lang.Comparable`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Comparable.html)).
    ```Java

@@ -45,6 +45,46 @@ public class Fraction {
     }
     
     @Override
+    public boolean equals(Object obj) {
+    if (this == obj) {
+        return true;
+    }
+    if (!(obj instanceof Fraction)) {
+        return false;
+    }
+
+    Fraction other = (Fraction) obj;
+    return (long) numerator * other.denominator
+            == (long) other.numerator * denominator;
+    }
+
+    @Override
+    public int hashCode() {
+    long n = numerator;
+    long d = denominator;
+
+    // Placer le signe dans le numérateur.
+    if (d < 0) {
+        n = -n;
+        d = -d;
+    }
+
+    // Calculer le PGCD pour obtenir une forme réduite.
+    long a = Math.abs(n);
+    long b = d;
+    while (b != 0) {
+        long remainder = a % b;
+        a = b;
+        b = remainder;
+    }
+
+    n /= a;
+    d /= a;
+
+    return 31 * Long.hashCode(n) + Long.hashCode(d);
+    }
+
+    @Override
     public String toString() {
         return numerator + "/" + denominator;
     }
