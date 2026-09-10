@@ -22,7 +22,11 @@ public class Main {
 
         assert new Fraction().getNumerator() == 0;
         assert new Fraction().getDenominator() == 1;
-        
-        System.out.println("Tests des constructeurs réussis.");
+        assert Math.abs(new Fraction(3, 4).doubleValue() - 0.75) < 1E-8;
+        assert Math.abs(new Fraction(1, 3).doubleValue() - 1.0 / 3.0) < 1E-8;
+        assert Math.abs(new Fraction(-1, 2).doubleValue() + 0.5) < 1E-8;
+        assert new Fraction().doubleValue() == 0.0;
+
+        System.out.println("Tous les tests ont réussi.");
     }
 }
