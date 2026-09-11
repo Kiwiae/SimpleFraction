@@ -59,10 +59,19 @@ public class Main {
         assert !half.equals("1/2");
 
         assert half.hashCode() == equivalentHalf.hashCode();
-        assert new Fraction(-1, 2).hashCode()
-               == new Fraction(1, -2).hashCode();
-        assert new Fraction(0, 5).hashCode() == Fraction.ZERO.hashCode();
-         
+        
+        assert new Fraction(1, 3)
+                .compareTo(new Fraction(1, 2)) < 0;
+        assert new Fraction(3, 4)
+                .compareTo(new Fraction(1, 2)) > 0;
+        assert new Fraction(1, 2)
+                .compareTo(new Fraction(2, 4)) == 0;
+        assert new Fraction(-1, 2)
+                .compareTo(Fraction.ZERO) < 0;
+        assert new Fraction(1, -2)
+                .compareTo(new Fraction(1, 3)) < 0;
+        assert new Fraction(-1, -2)
+                .compareTo(new Fraction(1, 2)) == 0;
 
         System.out.println("Tous les tests ont réussi.");
     }

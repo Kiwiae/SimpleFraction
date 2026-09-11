@@ -176,7 +176,19 @@ Vous respecterez les consignes ci-dessous :
     ```
 1. Ajoutez la comparaison de fractions selon l'ordre naturel (cf. [`java.lang.Comparable`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Comparable.html)).
    ```Java
-    // Assertions pour tester la comparaison
+    assert new Fraction(1, 3)
+        .compareTo(new Fraction(1, 2)) < 0;
+    assert new Fraction(3, 4)
+        .compareTo(new Fraction(1, 2)) > 0;
+    assert new Fraction(1, 2)
+        .compareTo(new Fraction(2, 4)) == 0;
+
+    assert new Fraction(-1, 2)
+        .compareTo(Fraction.ZERO) < 0;
+    assert new Fraction(1, -2)
+        .compareTo(new Fraction(1, 3)) < 0;
+    assert new Fraction(-1, -2)
+        .compareTo(new Fraction(1, 2)) == 0;
     ```
 1. Faites hériter votre classe `Fraction` de la classe [`java.lang.Number`](https://docs.oracle.com/en/java/javase/19/docs/api/java.base/java/lang/Number.html) et complétez les méthodes
    ```Java
