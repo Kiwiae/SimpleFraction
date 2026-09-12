@@ -59,7 +59,7 @@ public class Main {
         assert !half.equals("1/2");
 
         assert half.hashCode() == equivalentHalf.hashCode();
-        
+
         assert new Fraction(1, 3)
                 .compareTo(new Fraction(1, 2)) < 0;
         assert new Fraction(3, 4)
@@ -72,6 +72,17 @@ public class Main {
                 .compareTo(new Fraction(1, 3)) < 0;
         assert new Fraction(-1, -2)
                 .compareTo(new Fraction(1, 2)) == 0;
+        
+        Number aNumber = java.math.BigDecimal.ONE;
+        Number anotherNumber = new Fraction(1, 2);
+
+        assert Math.abs(
+            aNumber.doubleValue() + anotherNumber.doubleValue() - 1.5)
+            < 1E-8;
+
+        assert anotherNumber.intValue() == 0;
+        assert anotherNumber.longValue() == 0L;
+        assert Math.abs(anotherNumber.floatValue() - 0.5f) < 1E-6f;
 
         System.out.println("Tous les tests ont réussi.");
     }

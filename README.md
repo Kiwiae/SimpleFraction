@@ -196,6 +196,10 @@ Vous respecterez les consignes ci-dessous :
     Number aNumber = java.math.BigDecimal.ONE;
     Number anotherNumber = new Fraction(1, 2);
     assert java.lang.Math.abs(aNumber.doubleValue() + anotherNumber.doubleValue() - 1.5) < 1E-8;
+
+    assert anotherNumber.intValue() == 0;
+    assert anotherNumber.longValue() == 0L;
+    assert Math.abs(anotherNumber.floatValue() - 0.5f) < 1E-6f;
     ```
 
 ## Partie III (à faire à la maison) : révisions et perfectionnement *shell* et *IDE*

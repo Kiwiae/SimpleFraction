@@ -1,4 +1,4 @@
-public class Fraction implements Comparable<Fraction>{
+public class Fraction extends Number implements Comparable<Fraction> {
     private int numerator;
     private int denominator;
 
@@ -30,9 +30,25 @@ public class Fraction implements Comparable<Fraction>{
     public int getDenominator() {
     return denominator;
     }
-
+    
+    @Override
     public double doubleValue() {
     return (double) numerator / denominator;
+    }
+
+    @Override
+    public int intValue() {
+    return numerator / denominator;
+    }
+
+    @Override
+     public long longValue() {
+    return (long) numerator / denominator;
+    }
+
+    @Override
+    public float floatValue() {
+    return (float) numerator / denominator;
     }
 
     public Fraction add(Fraction other) {
