@@ -209,46 +209,48 @@ Vous pouvez répondre en utilisant le shell de votre choix (*bash*, *Powershell*
 Pour répondre à ces questions, vous devez effectuer les recherches documentaires adéquates (livre, web, …).
 
 1. Quel OS et quel shell de commande utilisez-vous ?
-    > Répondre ici
+    > J’utilise macOS sur un Mac équipé d’une puce Apple M1.
+    >J’utilise principalement le shell Bash dans le terminal.
 1. Quelle commande permet d'obtenir de l'aide ?
 Donnez un exemple.
     ```bash
-    # Répondre ici
+    man git
+    git --help
     ```
 1. Donnez la ou les commandes shell permettant de
     1. afficher les fichiers d'un répertoire triés par taille (taille affichée lisiblement)
         ```bash
-        # Répondre ici
+        ls -lhS
         ```
     1. compter le nombre de ligne d'un fichier
         ```bash
-        # Répondre ici
+        wc -l fichier.txt
         ```
     1. afficher les lignes du fichier `Main.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+        grep "uneVariable" Main.java
         ```
     1. afficher récursivement les fichiers `.java` contenant la chaîne `uneVariable`
         ```bash
-        # Répondre ici
+        grep -R --include="*.java" "uneVariable" .
         ```
     1. trouver les fichiers (pas les répertoires) nommés `README.md` dans une arborescence de répertoires
         ```bash
-        # Répondre ici
+        find . -type f -name "README.md"
         ```
     1. afficher les différences entre deux fichiers textes
         ```bash
-        # Répondre ici
+        diff fichier1.txt fichier2.txt
         ```
 1. Expliquez en une ou deux phrases le rôle de ces commandes et dans quel contexte elles peuvent être utiles pour un développeur.
     * `ssh`
-        > Répondre ici
+        > ssh permet d’établir une connexion sécurisée avec une machine distante.
     * `screen`/`tmux`
-        > Répondre ici
+        > screen et tmux permettent de conserver des sessions de terminal et de les reprendre plus tard.
     * `curl`/[HTTPie](https://httpie.org/)
-        > Répondre ici
+        > curl et HTTPie permettent d’effectuer des requêtes HTTP depuis le terminal.
     * [jq](https://stedolan.github.io/jq/)
-        > Répondre ici
+        > jq permet de lire, filtrer et transformer des données au format JSON.
 
 ### Découverte de votre *IDE*
 Dans cet exercice, vous expliquerez en quelques phrases comment vous réalisez les actions ci-dessous dans votre IDE.
@@ -256,28 +258,31 @@ Vous pouvez choisir l'IDE/éditeur de texte de votre choix.
 Pour réaliser cette exercice, vous devez bien évidemment vous reporter à la documentations de l'IDE ([IntelliJ IDEA](https://www.jetbrains.com/help/idea/discover-intellij-idea.html#developer-tools), [Visual Studio Code](https://code.visualstudio.com/docs), [Eclipse](https://help.eclipse.org/2020-09/index.jsp), …).
 
 1. Quels IDE ou éditeurs de texte utilisez-vous pour le développement Java ?
-    > Répondre ici
-
+    > J’utilise Visual Studio Code pour développer en Java.
     Pour la suite, ne considérez que l'un de vos choix.
 1. Comment vérifier/définir que l'encodage utilisé est *UTF-8* ?
-    > Répondre ici
+    > Dans VS Code, l’encodage du fichier est affiché dans la barre d’état.Je peux cliquer dessus et choisir UTF-8.
 1. Comment choisir le JDK à utiliser dans un projet ?
-    > Répondre ici
+    > J’installe l’Extension Pack for Java de Microsoft.Le JDK utilisé peut être choisi avec la commande « Java: Configure Java Runtime ».
 1. Comment préciser la version Java des sources dans un projet ?
-    > Répondre ici
+    > La version Java du projet est définie dans la configuration du projet,par exemple dans le fichier pom.xml avec Maven.
 1. Comment ajouter une bibliothèque externe dans un projet ?
-    > Répondre ici
+    > Je peux ajouter une bibliothèque externe avec Maven en ajoutant sa dépendance dans le fichier pom.xml.
 1. Comment reformater un fichier source Java ?
-    > Répondre ici
+    > Je peux reformater un fichier Java avec le raccourci Shift + Alt + F.
 1. Comment trouver la déclaration d'une variable ou méthode ?
-    > Répondre ici
+    > Je peux utiliser « Go to Definition » avec un clic droit ou la touche F12.
 1. Comment insérer un bloc de code prédéfini (*snippet*) ?
-    > Répondre ici
+    > Je peux insérer un snippet en tapant son préfixe puis en appuyant sur Tab.
 1. Comment renommer une classe dans l'ensemble du projet ?
-    > Répondre ici
+    > Je peux renommer une classe avec « Rename Symbol »,accessible avec un clic droit ou le raccourci F2.
 1. Comment exécuter le programme en lui passant un paramètre en ligne de commande ?
-    > Répondre ici
+    > Je peux exécuter le programme avec des arguments en configurant
+    > les « launch configurations » dans le fichier .vscode/launch.json.
 1. Comment déboguer le programme en visualisant le contenu d'une ou plusieurs variables ?
-    > Répondre ici
+    > Je peux lancer le débogueur avec F5, placer des points d’arrêt
+    > et consulter les variables dans le panneau « Variables ».
 1. Quels paramètres ou fonctionnalités vous semblent particulièrement importants/utiles pour le développement Java ?
-    > Répondre ici
+    > Les fonctionnalités les plus utiles sont l’autocomplétion,
+    > la détection des erreurs, le débogage, le formatage automatique,
+    > la navigation vers les définitions et l’intégration de Git.
